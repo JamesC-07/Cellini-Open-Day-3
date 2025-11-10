@@ -57,6 +57,11 @@
             text-align: center;
         }
 
+        input[type="text"]::placeholder {
+            color: #999;
+            font-style: italic;
+        }
+
         button {
             background: #8B0000;
             color: white;
@@ -202,7 +207,7 @@
             <h1>Step 3</h1>
             <p class="subtitle">Inserisci la password per continuare</p>
             
-            <input type="password" id="passwordInput" placeholder="Inserisci la password" />
+            <input type="password" id="passwordInput" placeholder="Inserisci la password dal gioco precedente" />
             <button onclick="checkInitialPassword()">Conferma</button>
             <p id="errorMsg1" class="error"></p>
         </div>
@@ -215,50 +220,61 @@
             <div class="game-section">
                 <p style="color: #333; font-size: 1.1em; margin-bottom: 20px;">
                     Osserva attentamente gli elementi e le operazioni.<br>
-                    Combina tutto per scoprire la parola finale.
+                    Combina tutto per scoprire la parola finale!
                 </p>
                 
                 <div class="rebus-container">
                     <div class="rebus-row">
                         <div class="rebus-item">
                             <div class="rebus-icon"></div>
-                            <div class="rebus-label">MELA</div>
+                            <div class="rebus-label">HUMAN</div>
+                        </div>
+
+                        <div class="operator">-</div>
+
+                        <div class="rebus-item">
+                            <div class="rebus-icon"></div>
+                            <div class="rebus-label">AN</div>
+                        </div>
+
+                        
+                        <div class="operator">+</div>
+                        
+                        <div class="rebus-item">
+                            <div class="rebus-text">ANIT</div>
+                            <div class="rebus-label">(aggiungi ANIT)</div>
                         </div>
                         
                         <div class="operator">+</div>
                         
                         <div class="rebus-item">
                             <div class="rebus-icon"></div>
-                            <div class="rebus-label">TEMA</div>
-                        </div>
-                        
-                        <div class="operator">-</div>
-                        
-                        <div class="rebus-item">
-                            <div class="rebus-text">EL</div>
-                            <div class="rebus-label">(togli EL)</div>
+                            <div class="rebus-label">ATIS</div>
                         </div>
                     </div>
 
-                    <div style="font-size: 3em; color: #8B0000; margin: 30px 0;"></div>
+                    <div style="font-size: 2em; color: #8B0000; margin: 30px 0;">⬇️</div>
 
                     <div class="rebus-row">
                         <div class="rebus-item">
-                            <div class="rebus-icon"></div>
-                            <div class="rebus-label">TICA</div>
+                            <div class="rebus-text">?</div>
+                            <div class="rebus-label">Quale parola si forma?</div>
                         </div>
                     </div>
                 </div>
                 
                 <div class="hint-box">
                     <strong>Come risolvere:</strong><br>
-                    1. Prendi la parola MELA<br>
-                    2. Aggiungi la parola TEMA<br>
-                    3. Togli le lettere EL<br>
-                    4. Aggiungi TICA alla fine<br>
+                    1. Prendi la parola HUMAN (👤)<br>
+                    2. Togli -AN
+                    3. Aggiungi ANIT<br>
+                    4. Aggiungi ATIS ()<br>
+                    5. Unisci tutto insieme!<br>
+                    <br>
+                    <em>Suggerimento: La parola finale è in latino e significa "delle cose umane"</em>
                 </div>
                 
-                <input type="text" id="rebusInput" placeholder="Inserisci la parola finale" style="text-transform: uppercase;" />
+                <input type="text" id="rebusInput" placeholder="Scrivi qui la parola che hai trovato..." style="text-transform: uppercase;" />
                 <button onclick="checkRebus()">Verifica Soluzione</button>
                 <p id="errorMsg2" class="error"></p>
             </div>
@@ -267,11 +283,11 @@
                 <h3>Cos'è un Rebus?</h3>
                 <p>
                     Un <strong>rebus</strong> è un gioco di enigmistica dove devi indovinare una parola o una frase 
-                    combinando immagini, lettere e operazioni matematiche! È come un puzzle linguistico.
+                    combinando immagini, lettere e operazioni! È come un puzzle linguistico.
                 </p>
                 <br>
                 <p>
-                    Nel nostro rebus hai visto che bisogna fare addizioni (+) e sottrazioni (-) con le parole, 
+                    Nel nostro rebus hai visto che bisogna fare addizioni (+) con le parole, 
                     proprio come si fa con i numeri in matematica! La differenza è che invece di numeri, 
                     lavoriamo con lettere e sillabe.
                 </p>
@@ -279,14 +295,14 @@
                 <p>
                     I rebus sono ottimi per allenare il cervello: ti aiutano a pensare in modo creativo, 
                     migliorano la tua capacità di problem solving e ti fanno vedere le parole da una prospettiva diversa. 
-                    Inoltre, sono molto divertenti!.
+                    Inoltre, sono molto divertenti!
                 </p>
             </div>
         </div>
 
         <!-- Pagina 3: Successo -->
         <div id="page3" class="page">
-            <div class="checkmark"></div>
+            <div class="checkmark">✓</div>
             <h1>Fantastico!</h1>
             <p class="subtitle">Hai risolto il rebus!</p>
             
@@ -297,15 +313,16 @@
                 
                 <div style="background: #f8f8f8; padding: 20px; border-radius: 10px; margin: 20px 0;">
                     <p style="color: #666; font-size: 1em; margin-bottom: 10px;">
-                        MELA + TEMA - EL + TICA =
+                        HUM + ANIT + ATIS =
                     </p>
-                    <div style="background: #228B22; color: white; padding: 25px; border-radius: 10px; font-size: 2.5em; font-weight: bold;">
-                        MATEMATICA
                     </div>
+                    <p style="color: #666; font-size: 0.9em; margin-top: 15px;">
+                        (che diventa HUMANITATIS in latino corretto)
+                    </p>
                 </div>
                 
                 <p style="color: #333; font-size: 1.1em; margin-top: 20px;">
-                    Questa è la tua nuova password per la prossima postazione! 
+                    Questa è la tua nuova password per la prossima postazione!
                 </p>
             </div>
         </div>
@@ -315,7 +332,7 @@
         // Pagina 1: Controllo password iniziale
         function checkInitialPassword() {
             const password = document.getElementById('passwordInput').value.toUpperCase();
-            const correctPassword = 'INFORMATICA';
+            const correctPassword = 'LUMEN';
             
             if (password === correctPassword) {
                 document.getElementById('page1').classList.remove('active');
@@ -329,9 +346,10 @@
         // Pagina 2: Controllo rebus
         function checkRebus() {
             const answer = document.getElementById('rebusInput').value.toUpperCase();
-            const correctAnswer = 'MATEMATICA';
+            const correctAnswer = 'HUMANITATIS';
+            const alternativeAnswer = 'UOMANITATIS';
             
-            if (answer === correctAnswer) {
+            if (answer === correctAnswer || answer === alternativeAnswer) {
                 document.getElementById('page2').classList.remove('active');
                 document.getElementById('page3').classList.add('active');
                 document.getElementById('errorMsg2').textContent = '';
