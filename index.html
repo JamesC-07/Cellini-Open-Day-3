@@ -265,7 +265,7 @@
                 
                 <div class="hint-box">
                     <strong>Come risolvere:</strong><br>
-                    1. Prendi la parola HUMAN (👤)<br>
+                    1. Prendi la parola HUMAN<br>
                     2. Togli -AN
                     3. Aggiungi ANIT<br>
                     4. Aggiungi ATIS ()<br>
@@ -315,10 +315,6 @@
                     <p style="color: #666; font-size: 1em; margin-bottom: 10px;">
                         HUM + ANIT + ATIS =
                     </p>
-                    </div>
-                    <p style="color: #666; font-size: 0.9em; margin-top: 15px;">
-                        (che diventa HUMANITATIS in latino corretto)
-                    </p>
                 </div>
                 
                 <p style="color: #333; font-size: 1.1em; margin-top: 20px;">
@@ -347,7 +343,6 @@
         function checkRebus() {
             const answer = document.getElementById('rebusInput').value.toUpperCase();
             const correctAnswer = 'HUMANITATIS';
-            const alternativeAnswer = 'UOMANITATIS';
             
             if (answer === correctAnswer || answer === alternativeAnswer) {
                 document.getElementById('page2').classList.remove('active');
