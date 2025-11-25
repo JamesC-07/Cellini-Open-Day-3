@@ -13,7 +13,7 @@
 
         body {
             font-family: 'Georgia', serif;
-            background: linear-gradient(135deg, #8B0000 0%, #DC143C 100%);
+            background: linear-gradient(135deg, #006400 0%, #228B22 100%);
             min-height: 100vh;
             display: flex;
             justify-content: center;
@@ -30,18 +30,18 @@
             max-width: 800px;
             width: 100%;
             text-align: center;
-            border: 3px solid #8B0000;
+            border: 3px solid #006400;
         }
 
         h1 {
-            color: #8B0000;
+            color: #006400;
             font-size: 2.5em;
             margin-bottom: 10px;
             font-weight: bold;
         }
 
         .subtitle {
-            color: #DC143C;
+            color: #228B22;
             font-size: 1.2em;
             margin-bottom: 30px;
             font-style: italic;
@@ -51,7 +51,7 @@
             width: 100%;
             padding: 15px;
             font-size: 1.1em;
-            border: 2px solid #DC143C;
+            border: 2px solid #228B22;
             border-radius: 10px;
             margin: 20px 0;
             text-align: center;
@@ -63,7 +63,7 @@
         }
 
         button {
-            background: #8B0000;
+            background: #006400;
             color: white;
             border: none;
             padding: 15px 40px;
@@ -76,13 +76,13 @@
         }
 
         button:hover {
-            background: #DC143C;
+            background: #228B22;
             transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(139, 0, 0, 0.3);
+            box-shadow: 0 5px 15px rgba(0, 100, 0, 0.3);
         }
 
         .error {
-            color: #DC143C;
+            color: #dc3545;
             margin-top: 10px;
             font-weight: bold;
         }
@@ -117,7 +117,7 @@
 
         .rebus-container {
             background: #f8f8f8;
-            border: 3px solid #8B0000;
+            border: 3px solid #006400;
             padding: 40px;
             border-radius: 15px;
             margin: 30px 0;
@@ -145,44 +145,44 @@
             background: white;
             border-radius: 15px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            border: 3px solid #DC143C;
+            border: 3px solid #228B22;
         }
 
         .rebus-text {
             font-size: 2em;
             font-weight: bold;
-            color: #8B0000;
+            color: #006400;
             font-family: 'Courier New', monospace;
         }
 
         .operator {
             font-size: 3em;
-            color: #8B0000;
+            color: #006400;
             font-weight: bold;
         }
 
         .hint-box {
-            background: #fff3cd;
-            border: 2px solid #ffc107;
+            background: #e8f5e9;
+            border: 2px solid #4caf50;
             padding: 15px;
             border-radius: 10px;
             margin: 20px 0;
-            color: #856404;
+            color: #1b5e20;
         }
 
         .explanation {
-            background: #e3f2fd;
-            border: 2px solid #2196f3;
+            background: #e8f5e9;
+            border: 2px solid #4caf50;
             padding: 20px;
             border-radius: 10px;
             margin: 30px 0;
-            color: #0d47a1;
+            color: #1b5e20;
             text-align: left;
             line-height: 1.8;
         }
 
         .explanation h3 {
-            color: #1565c0;
+            color: #2e7d32;
             margin-bottom: 15px;
             text-align: center;
         }
@@ -197,6 +197,25 @@
             font-size: 0.9em;
             color: #666;
             margin-top: 5px;
+        }
+
+        .solution-box {
+            background: #f8f8f8;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        .solution-box p {
+            color: #666;
+            font-size: 1em;
+            margin-bottom: 10px;
+        }
+
+        .arrow {
+            font-size: 2em;
+            color: #006400;
+            margin: 30px 0;
         }
     </style>
 </head>
@@ -253,7 +272,7 @@
                         </div>
                     </div>
 
-                    <div style="font-size: 2em; color: #8B0000; margin: 30px 0;">⬇️</div>
+                    <div class="arrow">⬇️</div>
 
                     <div class="rebus-row">
                         <div class="rebus-item">
@@ -268,7 +287,7 @@
                     1. Prendi la parola HUMAN<br>
                     2. Togli -AN<br>
                     3. Aggiungi ANIT<br>
-                    4. Aggiungi ATIS ()<br>
+                    4. Aggiungi ATIS<br>
                     5. Unisci tutto insieme!<br>
                     <br>
                     <em>Suggerimento: La parola finale è in latino e significa "delle cose umane"</em>
@@ -311,8 +330,8 @@
                     La soluzione del rebus era:
                 </p>
                 
-                <div style="background: #f8f8f8; padding: 20px; border-radius: 10px; margin: 20px 0;">
-                    <p style="color: #666; font-size: 1em; margin-bottom: 10px;">
+                <div class="solution-box">
+                    <p>
                         HUMAN - AN + ANIT + ATIS = HUMANITATIS
                     </p>
                 </div>
@@ -344,7 +363,7 @@
             const answer = document.getElementById('rebusInput').value.toUpperCase();
             const correctAnswer = 'HUMANITATIS';
             
-            if (answer === correctAnswer || answer === alternativeAnswer) {
+            if (answer === correctAnswer) {
                 document.getElementById('page2').classList.remove('active');
                 document.getElementById('page3').classList.add('active');
                 document.getElementById('errorMsg2').textContent = '';
